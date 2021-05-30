@@ -21,9 +21,10 @@ public class EmployeeDao {
 		return empStorage.getEmployeeList();
 	}
 
-	public void addEmployee(Employee e) {
+	public Employee addEmployee(Employee e) {
 
 		empStorage.addEmpToList(e);
+		return e;
 	}
 
 	public void deleteEmployee(int eno) {

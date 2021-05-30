@@ -15,9 +15,10 @@ public class EmployeeStorage {
 		return emp;
 	}
 
-	public void addEmpToList(Employee e) {
+	public Employee addEmpToList(Employee e) {
 
 		emp.add(e);
+		return e;
 	}
 
 	void deleteEmpFromList(int eno) {

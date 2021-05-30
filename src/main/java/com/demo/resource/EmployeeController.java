@@ -28,10 +28,11 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	@ResponseStatus(value = HttpStatus.OK)
-	public void addEmployee(@RequestBody Employee e) {
+	@ResponseBody
+	@ResponseStatus(value = HttpStatus.CREATED)
+	public Employee addEmployee(@RequestBody Employee e) {
 
-		empDao.addEmployee(e);
+		return empDao.addEmployee(e);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
@@ -43,8 +44,8 @@ public class EmployeeController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public void getEmployeeByID(@PathVariable("id") final int eno) {
+	public Employee getEmployeeByID(@PathVariable("id") final int eno) {
 
-		empDao.getEmpById(eno);
+		return empDao.getEmpById(eno);
 	}
 }
